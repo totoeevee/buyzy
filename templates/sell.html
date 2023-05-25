@@ -1,0 +1,42 @@
+<head>
+    <title>Buyzy - Buy Easy</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css"/>
+</head>
+<body>
+    <header>
+      <div id="navbar">
+        <nav>
+          <ul>
+            <li><img src="/static/LOGO.png" width="50" height="50"></li>
+            <li><a href="https://traysbud9bab9usdbackend.totoeevee.repl.co/#l">Home</a></li>
+            <li><a href="sell">Sell</a></li>
+            <li><a href="listings">Listings</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="createpage">
+        <h2>Create a listing!</h2>
+        <form id="creationform" action = "https://traysbud9bab9usdbackend.totoeevee.repl.co/create" method = "post">
+            <label>Product name: <input name = "Name" type="text" id="Name" maxlength="50" size="25"></label>
+            <br>
+            <label>Price (USD):</label>
+            <input name = "Price" type="number" id="Price">
+            <br>
+          <label>Contact Information:</label>
+            <input name = "Info" type="text" id="Contact">
+            <br>
+            <label>Description:</label><br>
+            <textarea name = "Desc" id="Description" rows="4" cols="50"></textarea>
+            <br>
+            <label>Upload any images of your product here!</label>
+            <br>
+            <input name = "images" type="file" id="myFile" name="filename">
+            <br>
+            <br>
+            <div id="submit">
+              <input type="submit" action="create" value="Sell Easy!">
+            </div>
+        </form>
+    </div>
+</body>

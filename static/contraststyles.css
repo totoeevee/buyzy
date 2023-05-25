@@ -1,0 +1,222 @@
+/* CSS Reset */
+* {
+    margin: auto;
+    padding-top: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+button{
+  font-size:22px;
+  border:0px;
+  color: 
+}
+  #fancytext{
+    font-size:50px;
+    font-weight:bold;
+  }
+  #homepageheader{
+    text-align:center;
+    font-size:60px;
+    padding: 0;
+  }
+  #buttons{
+    text-align:center;
+
+  #BigButtonB{
+    margin-right: 30px
+  }
+
+  #BigButtonS{
+    margin-left: 30px
+  }
+    
+  }
+hr{
+  width:5px;
+}
+  /* Basic Styling */
+  body {
+    font-family: Yu Gothic UI, CSS Fonts;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #197386;
+    background: rgb(118,216,163);
+    background: linear-gradient(90deg, rgba(118,216,163,1) 0%, rgba(255,255,255,1) 45%, rgba(255,255,255,1) 55%, rgba(0,212,255,1) 100%); /* [excitement] */
+
+  }
+  
+  h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #74d884;
+    text-decoration: none;
+  }
+  
+  /* Layout */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  #container {
+    border: 0px;
+    height: 125px;
+    
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    
+    /* just for demo */
+    min-width: 612px;
+}
+
+.box1, .box2, .box3 {
+    width: 150px;
+    height: 125px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    text-align:center;
+    zoom: 1
+}
+#container:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+.box1, .box3 {
+    background: #ccc
+}
+.box2, .box4 {
+    background: #0ff
+}
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  #creationform{
+    font-size: 20px;
+  }
+  input{
+    border-radius: 10%;
+    border-width: 2px;
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #pingtest {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #pingtest:hover {
+    background-color: #0062cc;
+  }
+  
+  #pingtest:active {
+    background-color: #005cbf;
+  }
+  #descriptionofbuyzy {
+    WIDTH:100%;
+    text-align:center;
+    margin:auto;
+    font-size:32px;
+  }
+#navbar{
+  line-height:100%;
+}
+  /* Responsive */
+  @media (max-width: 767px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav ul {
+      margin-top: 50px;
+      margin:0px;
+    }
+  
+    nav ul li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  #BigButtonB {
+    display: inline-block;
+    font-size: 100px; /* Adjust the font-size to make the buttons larger or smaller */
+    padding: 20px 40px; /* Adjust the padding to control the size of the clickable area */
+    text-align: center;
+    text-decoration: none;
+    background-color: #76A9D8; /* Change the background color to your desired color */
+    color: white;
+    border-radius: 10px; /* Adjust the border-radius to make the buttons more or less rounded */
+    border: none;
+    padding:3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box-shadow for a more 3D effect */
+    transition: all 0.3s ease-in-out; /* Add a transition effect for when the buttons are hovered over */
+  }
+  
+  #BigButtonB:hover {
+    background-color: #76D8A3; /* Change the background color to your desired hover color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a larger box-shadow for a more pronounced effect when hovered over */
+  }
+ #BigButtonS {
+    display: inline-block;
+    font-size: 100px; /* Adjust the font-size to make the buttons larger or smaller */
+    padding: 20px 40px; /* Adjust the padding to control the size of the clickable area */
+    text-align: center;
+    text-decoration: none;
+    background-color: #76D8A3; /* Change the background color to your desired color */
+    color: white;
+    border-radius: 10px; /* Adjust the border-radius to make the buttons more or less rounded */
+    border: none;
+    padding:3px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a box-shadow for a more 3D effect */
+    transition: all 0.3s ease-in-out; /* Add a transition effect for when the buttons are hovered over */
+  }
+  
+  #BigButtonS:hover {
+    background-color: #76A9D8; /* Change the background color to your desired hover color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a larger box-shadow for a more pronounced effect when hovered over */
+  }
+
+ 
+curl "$REPLIT_DB_URL?prefix=key"
+curl "$REPLIT_DB_URL?prefix=key"
