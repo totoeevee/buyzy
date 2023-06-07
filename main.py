@@ -1,13 +1,18 @@
 import string
-from replit import db
 from flask import Flask, render_template, redirect, request
 from flask_cors import CORS
 import uuid
+import sqlite3 as sql
 app = Flask(__name__, template_folder='templates', static_folder='static')
 CORS(
   app
 )  #This is simple, makes it work, but is basically begging for an XSS attack. Secure or tell them we would secure it later
 #make it a ctf problem lmao
+with sql.connect('listings.sqlite') as listingDB:
+  cursor = listingDB.cursor()
+  test = cursor.execute('SELECT name FROM sqlite_master WHERE type=\'table\' AND name=\'listings\';')
+  if test.fetchone() is None:
+    cursor.execute("CREATE TABLE listings(Name, Price, Desc, Info)") #Create the SQL table
 ok_chars = string.ascii_letters + string.digits
 
 @app.route('/')  # What happens when the user visits the site
@@ -17,13 +22,7 @@ def base_page():
 
 @app.route('/listings')
 def listings():
-  return render_template('listings.html', )
-
-
-@app.route('/ping')
-def page_3():
-  return "pong"
-
+  return render_template('listings.html')
 
 @app.route('/sell', methods=['POST'])
 def createlisting():
@@ -41,8 +40,6 @@ def create():
     filename=file.filename
     targetPath = "uploads/" + filename
     file.save(targetPath)
-    print("fr")
-  datathing = [price, description, info]
   try:
     f = open(
       "/home/runner/traysbud9bab9usdbackend/templates/" + pagename + ".html",
@@ -78,7 +75,10 @@ def create():
 			"""
     f.write(html_template)
     f.close()
-    db[pagename] = datathing
+    with sql.connect('listings.sqlite') as ListingsDB:
+      cursor = ListingsDB.cursor()
+      cursor.execute("INSERT INTO listings VALUES (?, ?, ?)", (pagename, price, description))
+      ListingsDB.commit()
     g = open("/home/runner/traysbud9bab9usdbackend/templates/listings.html",
              "a")
     htmla = f"""
